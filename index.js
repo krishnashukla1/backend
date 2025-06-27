@@ -6,7 +6,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://frontend-1-uhu2.onrender.com']
+}));
+
 app.use(express.json());
 
 // MongoDB Connection
@@ -82,5 +86,6 @@ POST/GET  http://localhost:5000/api/name
     }
 }
 ------------------
+live backend---> https://backend-hpok.onrender.com/api/name
 
 */
